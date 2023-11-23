@@ -31,6 +31,16 @@ Resources:
                         Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${PostLambdaFunction.Arn}/invocations
                       responses: {}
 
+  # layer for the ml model
+  MlModelLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: model
+      Description: My shared layer for ml model
+      ContentUri: ./sms_messages_as_spam_or_ham
+      CompatibleRuntimes:
+        - python3.9
+
   # lambda function resource for POST protocol
   PostLambdaFunction:
     Type: 'AWS::Serverless::Function'
@@ -38,6 +48,8 @@ Resources:
       CodeUri: ./src
       Handler: post.lambda_handler
       Runtime: python3.9
+      Layers:
+        - !Ref MlModelLayer
       Role: !GetAtt LambdaExecutionRole.Arn
       Environment:
         Variables:
