@@ -4,7 +4,7 @@ version = 0.1
 
 [default]
 [default.global.parameters]
-stack_name = "spam_or_ham"
+stack_name = "spam-or-ham"
 
 [default.build.parameters]
 cached = true
@@ -17,7 +17,7 @@ lint = true
 capabilities = "CAPABILITY_IAM"
 confirm_changeset = true
 resolve_s3 = true
-s3_prefix = "aws-hello-world"
+s3_prefix = "spam-or-ham"
 region = "us-east-1"
 image_repositories = []
 disable_rollback = true

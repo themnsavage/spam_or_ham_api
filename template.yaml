@@ -22,8 +22,8 @@ Resources:
               info:
                 title: My API
               paths: # paths that the api has
-                /items:
-                  post: # items POST protocol
+                /predictions:
+                  post:
                     x-amazon-apigateway-integration:
                       httpMethod: POST
                       type: aws_proxy
@@ -51,9 +51,6 @@ Resources:
       Layers:
         - !Ref MlModelLayer
       Role: !GetAtt LambdaExecutionRole.Arn
-      Environment:
-        Variables:
-          TABLE_NAME: !Ref MyDynamoDBTable
 
   # permission that allows api to invoke POST protocol lambda function
   PostLambdaFunctionApiInvokePermission:
