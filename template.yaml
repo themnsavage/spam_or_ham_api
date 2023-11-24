@@ -5,11 +5,6 @@ Description: >
 
   Sample SAM Template for spam_or_ham
 
-Globals:
-  Function:
-    Timeout: 3
-    MemorySize: 128
-
 Resources:
 
   # API resource
