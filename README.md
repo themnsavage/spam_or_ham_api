@@ -53,6 +53,7 @@ Train a machine learning model and deploy it as a web service using cloud platfo
 - In this project, I turned a spam detection model from a previous assignment into an API. Users can send messages through a POST request to check if they're spam or not. I used a dataset with message features and labels (spam or ham) and trained the model using the h2o AutoML library. The API was built using AWS, Python, Docker, and the SAM tool. Deploying it involved setting up AWS resources and testing with Postman. Challenges included dealing with unsupported Python libraries in AWS Lambda and the initial slow response of Lambda functions. While not perfect, the API works well after a few requests.
 
 ## Image of POST request to API using postman:
+![image](https://github.com/themnsavage/spam_or_ham_api/assets/60998598/0a3538d4-c4d6-42e2-b6e3-8124ee285f6c)
 
 ## References:
 - data set used: https://archive.ics.uci.edu/dataset/228/sms+spam+collection
